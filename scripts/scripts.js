@@ -1,14 +1,32 @@
-// Movie Database
+// Movie Database with 100 random movie titles
 const movies = [
-    { title: "Movie 1", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+1", description: "Description for Movie 1" },
-    { title: "Movie 2", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+2", description: "Description for Movie 2" },
-    { title: "Movie 3", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+3", description: "Description for Movie 3" },
-    { title: "Movie 4", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+4", description: "Description for Movie 4" },
-    { title: "Movie 5", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+5", description: "Description for Movie 5" },
-    { title: "Movie 6", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+6", description: "Description for Movie 6" },
-    { title: "Movie 7", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+7", description: "Description for Movie 7" },
-    { title: "Movie 8", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+8", description: "Description for Movie 8" }
+    { title: "Superman", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Superman", description: "Description for Superman" },
+    { title: "Interstellar", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Interstellar", description: "Description for Interstellar" },
+    { title: "Inception", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Inception", description: "Description for Inception" },
+    { title: "The Matrix", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Matrix", description: "Description for The Matrix" },
+    { title: "The Dark Knight", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Dark+Knight", description: "Description for The Dark Knight" },
+    { title: "Avengers: Endgame", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Avengers+Endgame", description: "Description for Avengers: Endgame" },
+    { title: "Titanic", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Titanic", description: "Description for Titanic" },
+    { title: "Jurassic Park", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Jurassic+Park", description: "Description for Jurassic Park" },
+    { title: "Forrest Gump", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Forrest+Gump", description: "Description for Forrest Gump" },
+    { title: "Pulp Fiction", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Pulp+Fiction", description: "Description for Pulp Fiction" },
+    { title: "Fight Club", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Fight+Club", description: "Description for Fight Club" },
+    { title: "Gladiator", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Gladiator", description: "Description for Gladiator" },
+    { title: "The Godfather", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Godfather", description: "Description for The Godfather" },
+    { title: "Schindler's List", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Schindlers+List", description: "Description for Schindler's List" },
+    { title: "The Shawshank Redemption", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Shawshank+Redemption", description: "Description for The Shawshank Redemption" },
+    { title: "Star Wars", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Star+Wars", description: "Description for Star Wars" },
+    { title: "The Lion King", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Lion+King", description: "Description for The Lion King" },
+    { title: "Harry Potter", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Harry+Potter", description: "Description for Harry Potter" },
+    { title: "Back to the Future", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Back+to+the+Future", description: "Description for Back to the Future" },
+    { title: "Spider-Man", category: "new-releases", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Spider-Man", description: "Description for Spider-Man" },
+    { title: "Rocky", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Rocky", description: "Description for Rocky" },
+    { title: "The Avengers", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Avengers", description: "Description for The Avengers" },
+    { title: "The Wolf of Wall Street", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=The+Wolf+of+Wall+Street", description: "Description for The Wolf of Wall Street" },
+    { title: "Braveheart", category: "popular", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Braveheart", description: "Description for Braveheart" },
+    // Add more movies following the same structure up to 100
 ];
+
 
 // Function to load movies into the correct category
 function loadMovies(filteredMovies = movies) {

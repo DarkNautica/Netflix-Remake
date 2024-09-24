@@ -28,11 +28,6 @@ nav {
     margin-left: 20px;
 }
 
-.user-menu {
-    display: flex;
-    align-items: center;
-}
-
 .user-menu img {
     width: 40px;
     border-radius: 50%;
@@ -66,9 +61,14 @@ main {
     margin-bottom: 50px;
 }
 
+.category h3 {
+    margin-left: 20px;
+}
+
 .movie-row {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
+    padding: 20px;
 }
 
 .movie-row img {

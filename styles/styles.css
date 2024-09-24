@@ -8,6 +8,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
     background-color: #141414;
 }
@@ -22,21 +23,57 @@ nav {
     border: none;
     padding: 10px;
     border-radius: 5px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: 20px;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.user-menu img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+main {
+    padding: 40px 20px;
+}
+
+.banner {
+    position: relative;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.banner h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    font-size: 3rem;
 }
 
 .category {
-    padding: 20px;
+    margin-bottom: 50px;
 }
 
 .movie-row {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+    display: flex;
+    overflow-x: scroll;
 }
 
 .movie-row img {
-    width: 100%;
-    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
     transition: transform 0.3s;
 }
 
@@ -48,5 +85,22 @@ footer {
     text-align: center;
     padding: 20px;
     background-color: #141414;
+    font-size: 0.8rem;
 }
 
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+    }
+
+    .movie-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .banner h2 {
+        font-size: 2rem;
+        left: 20px;
+    }
+}

@@ -81,40 +81,57 @@ footer {
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1;
-}
-
-.modal-content {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    width: 400px; /* Adjust the modal width */
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add box-shadow */
+    z-index: 1000;
+}
+
+.modal-content {
     text-align: center;
-    color: black;
+    color: #333; /* Text color for readability */
 }
 
 .modal-content img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    margin-bottom: 20px;
+    width: 100%; /* Ensure the image takes up the full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Add some space between the image and text */
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin: 0;
+    font-size: 1rem;
+    color: #666; /* Lighter color for the description text */
 }
 
 .close {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 15px;
     font-size: 24px;
+    color: #333; /* Close button color */
     cursor: pointer;
+    font-weight: bold;
+    background: none;
+    border: none;
 }
+
+.close:hover {
+    color: #ff0000; /* Change the color of the close button on hover */
+}
+
 
 /* Responsive Styling */
 @media (max-width: 768px) {

@@ -1,3 +1,5 @@
+console.log("JavaScript file loaded!");  // This should print when the file is loaded
+
 // Movie Database
 const movies = [
     { title: "Movie 1", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+1", description: "Description for Movie 1" },
@@ -12,36 +14,43 @@ const movies = [
 
 // Function to load movies into the correct category
 function loadMovies() {
+    console.log("Loading movies...");  // Add a debug log
     movies.forEach(movie => {
-        const movieElement = `<img src="${movie.image}" alt="${movie.title}" onclick="openModal('${movie.title}')">`;
+        const movieElement = `<
+img src="${movie.image}" alt="${movie.title}" onclick="openModal('${movie.title}')">`;
         const categoryElement = document.getElementById(movie.category);
         
         // Make sure the category exists before adding
         if (categoryElement) {
             categoryElement.innerHTML += movieElement;
+        } else {
+            console.error(`Category ${movie.category} not found.`);
         }
     });
 }
 
 // Function to open the modal with movie information
 function openModal(movieTitle) {
-    console.log("Clicked movie:", movieTitle);  // Debugging log
+    console.log("Opening modal for:", movieTitle);  // Add a debug log
     const movie = movies.find(m => m.title === movieTitle);
     if (movie) {
         document.getElementById('modal-image').src = movie.image;
         document.getElementById('modal-title').textContent = movie.title;
         document.getElementById('modal-description').textContent = movie.description;
         document.getElementById('movie-modal').style.display = 'block';
+    } else {
+        console.error(`Movie ${movieTitle} not found.`);
     }
 }
 
-
 // Function to close the modal
 function closeModal() {
+    console.log("Closing modal");  // Add a debug log
     document.getElementById('movie-modal').style.display = 'none';
 }
 
 // Initialize the page when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded");  // Debugging log
     loadMovies();  // Load movies dynamically
 });

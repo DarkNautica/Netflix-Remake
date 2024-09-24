@@ -1,5 +1,3 @@
-console.log("JavaScript file loaded!");  // This should print when the file is loaded
-
 // Movie Database
 const movies = [
     { title: "Movie 1", category: "trending-now", image: "https://via.placeholder.com/200x300/000000/ffffff?text=Movie+1", description: "Description for Movie 1" },
@@ -13,50 +11,54 @@ const movies = [
 ];
 
 // Function to load movies into the correct category
-function loadMovies() {
-    movies.forEach(movie => {
-        // Dynamically create an img element
+function loadMovies(filteredMovies = movies) {
+    // Clear all movie categories before loading
+    document.getElementById('trending-now').innerHTML = '';
+    document.getElementById('new-releases').innerHTML = '';
+
+    // Loop through the movies to add them to the respective categories
+    filteredMovies.forEach(movie => {
         const movieElement = document.createElement('img');
         movieElement.src = movie.image;
         movieElement.alt = movie.title;
         movieElement.onclick = function() { openModal(movie.title); };
         
-        // Find the category element to which this movie belongs
         const categoryElement = document.getElementById(movie.category);
 
-        // Make sure the category exists before adding
         if (categoryElement) {
-            categoryElement.appendChild(movieElement);  // Append the movie element
-        } else {
-            console.error(`Category ${movie.category} not found.`);
+            categoryElement.appendChild(movieElement);
         }
     });
 }
 
+// Function to filter movies by search term
+function filterMovies() {
+    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    
+    // Filter movies based on the search term
+    const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchTerm));
 
+    // Reload the movies based on the filtered list
+    loadMovies(filteredMovies);
+}
 
 // Function to open the modal with movie information
 function openModal(movieTitle) {
-    console.log("Opening modal for:", movieTitle);  // Add a debug log
     const movie = movies.find(m => m.title === movieTitle);
     if (movie) {
         document.getElementById('modal-image').src = movie.image;
         document.getElementById('modal-title').textContent = movie.title;
         document.getElementById('modal-description').textContent = movie.description;
         document.getElementById('movie-modal').style.display = 'block';
-    } else {
-        console.error(`Movie ${movieTitle} not found.`);
     }
 }
 
 // Function to close the modal
 function closeModal() {
-    console.log("Closing modal");  // Add a debug log
     document.getElementById('movie-modal').style.display = 'none';
 }
 
 // Initialize the page when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("DOM fully loaded");  // Debugging log
-    loadMovies();  // Load movies dynamically
+    loadMovies();  // Load movies dynamically on page load
 });

@@ -13,21 +13,26 @@ const movies = [
 ];
 
 // Function to load movies into the correct category
-// Function to load movies into the correct category
 function loadMovies() {
     movies.forEach(movie => {
-        // Use proper HTML string concatenation inside backticks
-        const movieElement = `<img src="${movie.image}" alt="${movie.title}" onclick="openModal('${movie.title}')">`;
-        const categoryElement = document.getElementById(movie.category);
+        // Dynamically create an img element
+        const movieElement = document.createElement('img');
+        movieElement.src = movie.image;
+        movieElement.alt = movie.title;
+        movieElement.onclick = function() { openModal(movie.title); };
         
+        // Find the category element to which this movie belongs
+        const categoryElement = document.getElementById(movie.category);
+
         // Make sure the category exists before adding
         if (categoryElement) {
-            categoryElement.innerHTML += movieElement; // Correctly append the HTML
+            categoryElement.appendChild(movieElement);  // Append the movie element
         } else {
             console.error(`Category ${movie.category} not found.`);
         }
     });
 }
+
 
 
 // Function to open the modal with movie information

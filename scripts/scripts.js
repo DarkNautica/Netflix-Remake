@@ -34,13 +34,17 @@ function loadMovies(filteredMovies = movies) {
 // Function to filter movies by search term
 function filterMovies() {
     const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+    console.log("Search term:", searchTerm);  // Debugging log to check if search is triggered
     
     // Filter movies based on the search term
     const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchTerm));
 
+    console.log("Filtered Movies:", filteredMovies);  // Debugging log to check the filtered results
+
     // Reload the movies based on the filtered list
     loadMovies(filteredMovies);
 }
+
 
 // Function to open the modal with movie information
 function openModal(movieTitle) {

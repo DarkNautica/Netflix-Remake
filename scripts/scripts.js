@@ -25,6 +25,7 @@ function loadMovies() {
 
 // Function to open the modal with movie information
 function openModal(movieTitle) {
+    console.log("Clicked movie:", movieTitle);  // Debugging log
     const movie = movies.find(m => m.title === movieTitle);
     if (movie) {
         document.getElementById('modal-image').src = movie.image;
@@ -33,6 +34,7 @@ function openModal(movieTitle) {
         document.getElementById('movie-modal').style.display = 'block';
     }
 }
+
 
 // Function to close the modal
 function closeModal() {

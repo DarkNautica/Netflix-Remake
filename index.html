@@ -1,106 +1,45 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #141414;
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Netflix Clone</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="images/netflix-logo.png" alt="Netflix Logo" class="logo">
+            <input type="text" class="search-bar" placeholder="Search">
+            <div class="user-menu">
+                <img src="assets/images/profile-icon.png" alt="User Icon">
+            </div>
+        </nav>
+    </header>
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #141414;
-}
+    <main>
+        <section class="banner">
+            <img src="images/featured-movie.jpg" alt="Featured Movie">
+            <h2>Featured Movie</h2>
+        </section>
 
-.logo {
-    width: 100px;
-}
+        <section class="category">
+            <h3>Trending Now</h3>
+            <div class="movie-row">
+                <img src="images/movie1.jpg" alt="Movie 1">
+                <img src="images/movie2.jpg" alt="Movie 2">
+                <img src="images/movie3.jpg" alt="Movie 3">
+                <img src="images/movie4.jpg" alt="Movie 4">
+                <img src="images/movie5.jpg" alt="Movie 5">
+                <img src="images/movie6.jpg" alt="Movie 6">
+            </div>
+        </section>
+    </main>
 
-.search-bar {
-    background-color: #222;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    width: 300px;
-    margin-right: auto;
-    margin-left: 20px;
-}
+    <footer>
+        <p>&copy; 2024 Netflix Clone</p>
+    </footer>
 
-.user-menu {
-    display: flex;
-    align-items: center;
-}
-
-.user-menu img {
-    width: 40px;
-    border-radius: 50%;
-}
-
-main {
-    padding: 40px 20px;
-}
-
-.banner {
-    position: relative;
-    height: 400px;
-    margin-bottom: 40px;
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.banner h2 {
-    position: absolute;
-    bottom: 20px;
-    left: 40px;
-    font-size: 3rem;
-}
-
-.category {
-    margin-bottom: 50px;
-}
-
-.movie-row {
-    display: flex;
-    overflow-x: scroll;
-}
-
-.movie-row img {
-    width: 200px;
-    margin-right: 10px;
-    transition: transform 0.3s;
-}
-
-.movie-row img:hover {
-    transform: scale(1.1);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #141414;
-    font-size: 0.8rem;
-}
-
-@media (max-width: 768px) {
-    .search-bar {
-        width: 100%;
-    }
-
-    .movie-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .banner h2 {
-        font-size: 2rem;
-        left: 20px;
-    }
-}
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>

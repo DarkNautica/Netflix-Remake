@@ -10,7 +10,7 @@
     <header>
         <nav>
             <img src="assets/images/logo.png" alt="Netflix Logo" class="logo">
-            <input type="text" id="search-bar" class="search-bar" placeholder="Search">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search" oninput="filterMovies()">
             <div class="user-menu">
                 <img src="assets/images/profile-icon.png" alt="User Icon">
             </div>
@@ -23,26 +23,16 @@
             <h2>Featured Movie</h2>
         </section>
 
-        <!-- Trending Now Hardcoded -->
+        <!-- Trending Now -->
         <section class="category">
             <h3>Trending Now</h3>
-            <div class="movie-row">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+1" alt="Movie 1">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+2" alt="Movie 2">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+3" alt="Movie 3">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+4" alt="Movie 4">
-            </div>
+            <div class="movie-row" id="trending-now"></div> <!-- Dynamic Movies will go here -->
         </section>
 
         <!-- New Releases -->
         <section class="category">
             <h3>New Releases</h3>
-            <div class="movie-row">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+5" alt="Movie 5">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+6" alt="Movie 6">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+7" alt="Movie 7">
-                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+8" alt="Movie 8">
-            </div>
+            <div class="movie-row" id="new-releases"></div> <!-- Dynamic Movies will go here -->
         </section>
 
     </main>
@@ -50,5 +40,7 @@
     <footer>
         <p>&copy; 2024 Netflix Clone</p>
     </footer>
+
+    <script src="scripts/scripts.js"></script> <!-- Link to JS -->
 </body>
 </html>

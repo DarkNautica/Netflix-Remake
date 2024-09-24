@@ -10,7 +10,7 @@
     <header>
         <nav>
             <img src="assets/images/logo.png" alt="Netflix Logo" class="logo">
-            <input type="text" id="search-bar" class="search-bar" placeholder="Search" oninput="filterMovies()">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search">
             <div class="user-menu">
                 <img src="assets/images/profile-icon.png" alt="User Icon">
             </div>
@@ -23,39 +23,32 @@
             <h2>Featured Movie</h2>
         </section>
 
-        <!-- Trending Now -->
+        <!-- Trending Now Hardcoded -->
         <section class="category">
             <h3>Trending Now</h3>
-            <div class="movie-row" id="trending-now"></div> <!-- ID should match -->
+            <div class="movie-row">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+1" alt="Movie 1">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+2" alt="Movie 2">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+3" alt="Movie 3">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+4" alt="Movie 4">
+            </div>
         </section>
 
         <!-- New Releases -->
         <section class="category">
             <h3>New Releases</h3>
-            <div class="movie-row" id="new-releases"></div> <!-- ID should match -->
+            <div class="movie-row">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+5" alt="Movie 5">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+6" alt="Movie 6">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+7" alt="Movie 7">
+                <img src="https://via.placeholder.com/200x300/000000/ffffff?text=Movie+8" alt="Movie 8">
+            </div>
         </section>
 
-        <!-- Popular on Netflix -->
-        <section class="category">
-            <h3>Popular on Netflix</h3>
-            <div class="movie-row" id="popular"></div> <!-- ID should match -->
-        </section>
     </main>
-
-    <!-- Modal for Movie Information -->
-    <div id="movie-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Movie Image">
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-        </div>
-    </div>
 
     <footer>
         <p>&copy; 2024 Netflix Clone</p>
     </footer>
-
-    <script src="scripts/scripts.js"></script>
 </body>
 </html>
